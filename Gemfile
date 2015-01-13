@@ -48,5 +48,5 @@ gem 'bootstrap-sass'
 
 group :production do
   gem 'rails_12factor'
-  gem 'passenger', :git => 'https://github.com/phusion/passenger.git'
+  gem 'unicorn'
 end
