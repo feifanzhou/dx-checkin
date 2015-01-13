@@ -1,0 +1,81 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+$body-bg: #EEEEEE;
+$text-color: #444444;
+$brand-primary: #ecba1f;
+$input-border-focus: #ecba1f;
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+html, body {
+  height: 100%;
+  position: relative;
+}
+.container {
+  height: auto !important;
+  height: 100%;
+  padding-top: 2em;
+  margin-bottom: -1.5em;
+  min-height: 100%;
+}
+#snapForm {
+  text-align: center;
+}
+#snapshot {
+  display: none;
+}
+#snapButtonContainer, #clearButtonContainer {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+#captureButton {
+  display: none;
+}
+#submitButton {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+input[type='text'] {
+  background: rgba(255, 255, 255, 0.3);
+  // border: none;
+  box-shadow: none;
+  outline: none !important;
+}
+
+label > span {
+  color: #777;
+  font-weight: 400;
+}
+
+footer, #push {
+  height: 1.5em;
+}
+footer {
+  color: #777;
+  font-size: 0.8em;
+  opacity: 0.5;
+  padding-bottom: 1em;
+  text-align: center;
+  a {
+    text-decoration: none;
+  }
+}
+#tunetapLink {
+  color: #F16214 !important;
+  text-decoration: none;
+}

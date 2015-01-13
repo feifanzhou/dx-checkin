@@ -1,0 +1,72 @@
+<% class_string = 'col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4' %>
+<div><canvas id="canvas" width="960" height="720" style="display: none;"></canvas></div>
+<div class='container'>
+  <div class='row'>
+    <video id="getUserMedia" autoplay="" src="" class="<%= class_string %>"></video>
+    <img id="snapshot" src="" alt="snapshot" class="<%= class_string %>" />
+  </div>
+  <form action="javascript:;" method="post" class='row' id='snapForm'>
+    <div class='<%= class_string %>'>
+      <button id="captureButton">Capture</button>
+    </div>
+    <div class='<%= class_string %>' id='snapButtonContainer'>
+      <button class='btn btn-default btn-block btn-lg' id="snapshotButton">
+        <span class='fa fa-camera'></span>
+        <span>Snap</span>
+      </button>
+    </div>
+    <div class='<%= class_string %>' id='clearButtonContainer'>
+      <button class='btn btn-danger btn-lg' id="clearButton">
+        <span class='fa fa-close'></span>
+        <span>Retry</span>
+      </button>
+    </div>
+  </form>
+  <%= form_for Kid.new,  html: { multipart: true } do |k| %>
+    <%= k.hidden_field :image %>
+    <div class='row'>
+      <label for='kid_net_id' class='<%= class_string %>'>
+        <span>NetID</span>
+        <div class='input-group'>
+          <%= k.text_field :net_id, class: 'form-control input-lg' %>
+          <div class='input-group-addon'>@cornell.edu</div>
+        </div>
+      </label>
+    </div>
+    <div class='row'>
+      <label for='kid_fname' class='col-xs-6 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3 col-lg-2 col-lg-offset<span>-4'>
+        <span>First name</span>
+        <%= k.text_field :fname, class: 'form-control input-lg' %>
+      </label>
+      <label for='kid_lname' class='col-xs-6 col-sm-4 col-md-3 col-lg-2'>
+        <span>Last name</span>
+        <%= k.text_field :lname, class: 'form-control input-lg' %>
+      </label>
+    </div>
+    <div class='row'>
+      <label for='kid_address' class='<%= class_string %>'>
+        <span>Local address</span>
+        <%= k.text_field :address, class: 'form-control input-lg' %>
+      </label>
+    </div>
+    <div class='row'>
+      <label for='kid_phone' class='<%= class_string %>'>
+        <span>Phone number</span>
+        <%= k.text_field :phone, class: 'form-control input-lg' %>
+      </label>
+    </div>
+    <div class='row'>
+      <div class='<%= class_string %>'>
+        <%= k.submit 'Save', class: 'btn btn-primary btn-block btn-lg', id: 'submitButton', disabled: true %>
+        <%#= button_tag 'Clear', type: :reset, class: 'btn btn-default' %>
+      </div>
+    </div>
+  <% end %>
+  <div id='push'></div>
+</div>
+
+<footer>
+  <span>Built for &Delta;&Chi; at Cornell University by <a href='https://twitter.com/FeifanZ' target='_blank'>Feifan Zhou</a></span>
+  <span> &bull; </span>
+  <span>Like concerts? Check out <a href='https://www.tunetap.com/' target='_blank' id='tunetapLink'>Tunetap</a></span>
+</footer>

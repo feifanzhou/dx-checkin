@@ -1,0 +1,30 @@
+# == Schema Information
+#
+# Table name: kids
+#
+#  id         :integer          not null, primary key
+#  net_id     :string
+#  fname      :string
+#  lname      :string
+#  address    :string
+#  phone      :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  image      :text
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  net_id: MyString
+  fname: MyString
+  lname: MyString
+  address: MyString
+  phone: MyString
+
+two:
+  net_id: MyString
+  fname: MyString
+  lname: MyString
+  address: MyString
+  phone: MyString
