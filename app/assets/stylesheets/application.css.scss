@@ -88,10 +88,14 @@ footer {
   margin-top: 1em;
   text-align: center;
 }
+#card {
+  text-align: center;
+}
 .Kid {
   border-radius: 0.5em;
   box-shadow: 0 1px 1px 1px rgba(150, 150, 150, 0.5);
-  display: none;
+  // display: none;
+  display: inline-block;
   overflow: hidden;
   transition: margin 0.25s;
   width: 420px;
@@ -119,5 +123,35 @@ footer {
     height: 2em;
     margin: 1em;
     width: 2em;
+  }
+}
+
+ol {
+  background: white;
+  border-radius: 4px;
+  list-style: none;
+  overflow: hidden;
+  li {
+    border-bottom: 1px solid #CCC;
+    color: #999;
+    font-weight: 700;
+    font-size: 1.5em;
+    padding: 0.5em 0;
+    &:hover {
+      cursor: pointer;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+    &.Active {
+      color: black;
+    }
+    &.Rejected {
+      color: #CCC;
+      text-decoration: line-through;
+    }
+    &.Accepted {
+      color: #5cb85c;
+    }
   }
 }

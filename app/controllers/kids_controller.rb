@@ -10,9 +10,22 @@ class KidsController < ApplicationController
     end
   end
 
+  def summary
+    render text: 'Password?' and return unless params[:c] == ENV['SUMMARY_ACCESS_CODE']
+    @names = Kid.pluck(:id, :fname, :nickname, :lname, :is_accepted)
+  end
+
   def new
     @message = flash[:message]
     @flash_style = flash[:success] ? 'alert-success' : 'alert-danger'
+  end
+
+  def show
+    @kid = Kid.find(params[:id])
+    respond_to do |format|
+      format.html { render partial: 'partials/card' }
+      format.json { render json: @kid }
+    end
   end
 
   def create

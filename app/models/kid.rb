@@ -17,6 +17,10 @@
 
 class Kid < ActiveRecord::Base
   def name
-    "#{ fname } #{ lname }"
+    nickname.blank? ? "#{ fname } #{ lname }" : "#{ fname } '#{ nickname }' #{ lname }"
+  end
+
+  def email
+    "#{ net_id }@cornell.edu"
   end
 end
