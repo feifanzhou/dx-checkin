@@ -62,6 +62,11 @@
       </div>
     </div>
   <% end %>
+  <% unless @message.blank? %>
+    <div class='row'>
+      <div class='alert <%= @flash_style %> <%= class_string %>' role='alert'><%= @message.html_safe %></div>
+    </div>
+  <% end %>
   <div id='push'></div>
 </div>
 

@@ -90,3 +90,7 @@ function init() {
 init()
 $('#captureButton').click()
 console.error("Hey you. You're probably a web developer. Maybe you'd like to know this site was built using Rails. Maybe you'd also like to know that Tunetap is looking for Rails developers to help us shape the future of concerts. And if you join us you'll get exclusive access to the hottest shows. Interested? thetap@tunetap.com.");
+
+setTimeout(function() {
+  $('.alert').slideUp()
+}, 3000)
