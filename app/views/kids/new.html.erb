@@ -1,5 +1,5 @@
 <% class_string = 'col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4' %>
-<div><canvas id="canvas" width="960" height="720" style="display: none;"></canvas></div>
+<div><canvas id="canvas" width="480" height="360" style="display: none;"></canvas></div>
 <div class='container'>
   <div class='row'>
     <video id="getUserMedia" autoplay="" src="" class="<%= class_string %>"></video>
@@ -70,8 +70,6 @@
   <div id='push'></div>
 </div>
 
-<footer>
-  <span>Built for &Delta;&Chi; at Cornell University by <a href='https://twitter.com/FeifanZ' target='_blank'>Feifan Zhou</a></span>
-  <span> &bull; </span>
-  <span>Like concerts? Check out <a href='https://www.tunetap.com/' target='_blank' id='tunetapLink'>Tunetap</a></span>
-</footer>
+<%= render 'partials/footer' %>
+
+<%= javascript_include_tag 'take_photo', 'data-turbolinks-track' => true %>

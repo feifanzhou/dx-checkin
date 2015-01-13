@@ -33,7 +33,7 @@ function capture(video, canvas, image, captureButton, stopButton, snapshotButton
   };
 
   var takePhoto = function () {
-    ctx.drawImage(video, 0, 0, 960, 720);
+    ctx.drawImage(video, 0, 0, 480, 360);
     showImage();
   };
 
@@ -41,8 +41,7 @@ function capture(video, canvas, image, captureButton, stopButton, snapshotButton
     imgString = canvas.toDataURL('image/jpg');
     image.src = imgString
     image.style.display = "block";
-    commaIndex = imgString.indexOf(',')
-    document.getElementById('kid_image').value = imgString.substring(commaIndex + 1);
+    document.getElementById('kid_image').value = imgString
   };
 
   var stop = function () {

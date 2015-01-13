@@ -83,3 +83,41 @@ footer {
   color: #F16214 !important;
   text-decoration: none;
 }
+
+#kids {
+  margin-top: 1em;
+  text-align: center;
+}
+.Kid {
+  border-radius: 0.5em;
+  box-shadow: 0 1px 1px 1px rgba(150, 150, 150, 0.5);
+  display: none;
+  overflow: hidden;
+  transition: margin 0.25s;
+  width: 420px;
+  &.Left {
+    margin-left: -2000px;
+  }
+  &.Right {
+    margin-right: -2000px;
+  }
+  &.Visible {
+    display: inline-block;
+  }
+  img {
+    height: auto;
+    width: 420px;
+  }
+  h1, p {
+    padding: 0 15px;
+  }
+}
+#buttons {
+  text-align: center;
+  button {
+    font-size: 4em;
+    height: 2em;
+    margin: 1em;
+    width: 2em;
+  }
+}

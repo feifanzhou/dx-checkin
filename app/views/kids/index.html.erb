@@ -1,0 +1,14 @@
+<div class='container'>
+  <div id='kids'>
+    <span class='fa fa-spin fa-circle-o-notch fa-3x'></span>
+  </div>
+
+  <div id='buttons'>
+    <button class='btn btn-lg btn-danger' id='rejectButton'><span class='fa fa-close'></span></button>
+    <button class='btn btn-lg btn-success' id='acceptButton'><span class='fa fa-check'></span></button>
+  </div>
+</div>
+
+<%= render 'partials/footer' %>
+
+<%= javascript_include_tag 'ranking', 'data-turbolinks-track' => true %>

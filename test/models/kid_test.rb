@@ -2,15 +2,16 @@
 #
 # Table name: kids
 #
-#  id         :integer          not null, primary key
-#  net_id     :string
-#  fname      :string
-#  lname      :string
-#  address    :string
-#  phone      :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  image      :text
+#  id          :integer          not null, primary key
+#  net_id      :string
+#  fname       :string
+#  lname       :string
+#  address     :string
+#  phone       :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  image       :text
+#  is_accepted :boolean
 #
 
 require 'test_helper'

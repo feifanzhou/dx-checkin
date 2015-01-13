@@ -1,4 +1,15 @@
 class KidsController < ApplicationController
+  def index
+    respond_to do |format|
+      format.html do
+        render('index') and return if params[:p].blank?
+        @kids = kids_for_page(params[:p])
+        render(partial: 'partials/profiles') 
+      end
+      format.json { render json: kids_for_page(params[:p]) }
+    end
+  end
+
   def new
     @message = flash[:message]
     @flash_style = flash[:success] ? 'alert-success' : 'alert-danger'
@@ -16,8 +27,28 @@ class KidsController < ApplicationController
     redirect_to root_path
   end
 
+  def update
+    @kid = Kid.find(params[:id])
+    @kid.is_accepted = is_accepted_param == 'true' ? true : false
+    @kid.save
+    render json: { is_accepted: @kid.is_accepted }
+  end
+
   private
+  def is_accepted_param
+    params[:kid][:is_accepted]
+  end
+
   def kid_params
     params.require(:kid).permit(:image, :net_id, :fname, :lname, :address, :phone)
+  end
+
+  PAGE_SIZE=10
+  def unaccepted_kids
+    Kid.where(is_accepted: nil)
+  end
+  def kids_for_page(page)
+    page = page.to_i
+    (page.blank? || page < 1) ? unaccepted_kids : unaccepted_kids.limit(PAGE_SIZE)
   end
 end
