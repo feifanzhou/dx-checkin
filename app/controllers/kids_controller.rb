@@ -40,7 +40,7 @@ class KidsController < ApplicationController
   end
 
   def kid_params
-    params.require(:kid).permit(:image, :net_id, :fname, :lname, :address, :phone)
+    params.require(:kid).permit(:image, :net_id, :fname, :lname, :nickname, :address, :phone)
   end
 
   PAGE_SIZE=10

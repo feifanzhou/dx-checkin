@@ -1,4 +1,4 @@
-<% class_string = 'col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4' %>
+<% class_string = 'col-xs-12 col-md-6 col-md-offset-3' %>
 <div><canvas id="canvas" width="480" height="360" style="display: none;"></canvas></div>
 <div class='container'>
   <div class='row'>
@@ -28,19 +28,23 @@
       <label for='kid_net_id' class='<%= class_string %>'>
         <span>NetID</span>
         <div class='input-group'>
-          <%= k.text_field :net_id, class: 'form-control input-lg' %>
+          <%= k.text_field :net_id, class: 'form-control input-lg', required: true %>
           <div class='input-group-addon'>@cornell.edu</div>
         </div>
       </label>
     </div>
     <div class='row'>
-      <label for='kid_fname' class='col-xs-6 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3 col-lg-2 col-lg-offset<span>-4'>
+      <label for='kid_fname' class='col-xs-4 col-md-2 col-md-offset-3'>
         <span>First name</span>
-        <%= k.text_field :fname, class: 'form-control input-lg' %>
+        <%= k.text_field :fname, class: 'form-control input-lg', required: true %>
       </label>
-      <label for='kid_lname' class='col-xs-6 col-sm-4 col-md-3 col-lg-2'>
+      <label for='kid_nickname' class='col-xs-4 col-md-2'>
+        <span>Nickname</span>
+        <%= k.text_field :nickname, class: 'form-control input-lg' %>
+      </label>
+      <label for='kid_lname' class='col-xs-4 col-md-2'>
         <span>Last name</span>
-        <%= k.text_field :lname, class: 'form-control input-lg' %>
+        <%= k.text_field :lname, class: 'form-control input-lg', required: true %>
       </label>
     </div>
     <div class='row'>

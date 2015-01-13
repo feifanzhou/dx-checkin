@@ -12,6 +12,7 @@
 #  updated_at  :datetime         not null
 #  image       :text
 #  is_accepted :boolean
+#  nickname    :string
 #
 
 require 'test_helper'

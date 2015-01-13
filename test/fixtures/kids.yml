@@ -12,6 +12,7 @@
 #  updated_at  :datetime         not null
 #  image       :text
 #  is_accepted :boolean
+#  nickname    :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
