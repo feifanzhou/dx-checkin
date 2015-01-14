@@ -12,7 +12,7 @@ class KidsController < ApplicationController
 
   def summary
     render text: 'Password?' and return unless params[:c] == ENV['SUMMARY_ACCESS_CODE']
-    @names = Kid.pluck(:id, :fname, :nickname, :lname, :is_accepted)
+    @names = Kid.order("LOWER(fname)").pluck(:id, :fname, :nickname, :lname, :is_accepted)
   end
 
   def new
