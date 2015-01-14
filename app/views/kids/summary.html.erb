@@ -3,7 +3,7 @@
     <ol class='col-xs-12 col-sm-3'>
       <% @names.each do |name| %>
         <% className ='Name' %>
-        <% if name[4] then className += ' Accepted'; elsif !name[4] then className += ' Rejected'; end %>
+        <% if name[4] then className += ' Accepted'; elsif (name[4] == false) then className += ' Rejected'; end %>
         <li class='<%= className %>' data-id='<%= name[0] %>'><%= name[2].blank? ? "#{ name[1] } #{ name[3] }" : "#{ name [1] } '#{ name[2] }' #{ name[3] }" %></li>
       <% end %>
     </ol>
