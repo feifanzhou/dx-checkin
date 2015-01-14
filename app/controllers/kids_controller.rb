@@ -12,7 +12,10 @@ class KidsController < ApplicationController
 
   def summary
     render text: 'Password?' and return unless params[:c] == ENV['SUMMARY_ACCESS_CODE']
-    @names = Kid.order("LOWER(fname)").pluck(:id, :fname, :nickname, :lname, :is_accepted)
+    @accepted = filter_names(Kid.where(is_accepted: true))
+    @lost = filter_names(Kid.where(is_accepted: nil))
+    @xed = filter_names(Kid.where(is_accepted: false))
+    @names = @accepted + @lost + @xed
   end
 
   def new
@@ -48,6 +51,9 @@ class KidsController < ApplicationController
   end
 
   private
+  def filter_names(kids)
+    kids.order("LOWER(fname)").pluck(:id, :fname, :nickname, :lname, :is_accepted)
+  end
   def is_accepted_param
     params[:kid][:is_accepted]
   end
