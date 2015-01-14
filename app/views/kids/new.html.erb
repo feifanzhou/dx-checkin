@@ -22,7 +22,7 @@
       </button>
     </div>
   </form>
-  <%= form_for Kid.new,  html: { multipart: true } do |k| %>
+  <%= form_for Kid.new do |k| %>
     <%= k.hidden_field :image %>
     <div class='row'>
       <label for='kid_net_id' class='<%= class_string %>'>

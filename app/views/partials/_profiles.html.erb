@@ -1,0 +1,6 @@
+<% @kids.each do |kid| %>
+  <%= render 'partials/card', kid: kid %>
+<% end %>
+<% if @kids.length == 0 %>
+  <h1>Done</h1>
+<% end %>
