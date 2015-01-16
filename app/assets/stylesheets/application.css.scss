@@ -129,8 +129,9 @@ footer {
 ol {
   background: white;
   border-radius: 4px;
+  height: 680px;
   list-style: none;
-  overflow: hidden;
+  overflow: scroll;
   li {
     border-bottom: 1px solid #CCC;
     color: #999;
